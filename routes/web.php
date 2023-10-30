@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\blogController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +22,9 @@ Route::post('/store',[ProductsController::class,'store'])->name('store');
 Route::get('/delete/{id}',[ProductsController::class,'destroy'])->name('destroy');
 Route::get('/edit/{id}',[ProductsController::class,'edit'])->name('edit');
 Route::put('/update/{id}',[ProductsController::class,'update'])->name('update');
+
+
+
+Route::get('/blogs',[blogController::class,'index']);
+Route::get('/profile/{id}',[blogController::class,'show']);
 
